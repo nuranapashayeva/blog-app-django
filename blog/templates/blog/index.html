@@ -1,0 +1,12 @@
+<!-- blog/templates/blog/index.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Latest Posts</h1>
+    <ul>
+        {% for post in latest_posts %}
+            <li><a href="{% url 'post' post.id %}">{{ post.title }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_post' %}">Add Post</a>
+{% endblock %}

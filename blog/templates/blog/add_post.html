@@ -1,0 +1,11 @@
+<!-- blog/templates/blog/add_post.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Add Post</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Post</button>
+    </form>
+{% endblock %}
